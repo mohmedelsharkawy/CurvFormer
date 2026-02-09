@@ -1,19 +1,26 @@
-# config.yml
 training:
-  seed: 42
-  n_splits: 3
-  weight_decay: 0.01
+  seeds: [0,42,512]
   num_classes: 12
-  is_finetuning: True
-   # NEW: select model
-  model_name: "my_model"   
-  model_size: "S"  
   lr: 0.0001
-  batch_size: 1 #8
+  batch_size: 1
   epochs: 100
-  exp_name: "CurvFormer"
+  weight_decay: 0.01
+  model_size: "S"
+  img_size: [11, 256, 256]
+  spacing_dhw: [1.0, 1.0, 1.0]
+  print_every: 1
+  w_seg: 0.5
+  w_bnd: 0.5
+  dice_weight: 0.5
+  ce_weight: 0.5
+  boundary_thickness: 1
+  strict_mask_values: true
+  auto_ce_weights: false
 
 data:
   dataset_path: "data/oct.p"
 
-
+model:
+  use_curvature: true
+  use_learned_curvature: false
+  dropout: 0.1
