@@ -22,7 +22,7 @@ from tqdm.auto import tqdm
 
 from scipy.ndimage import distance_transform_edt, binary_erosion
 
-from layernode_curvatureformer_v3_boundary import create_layernode_curvatureformer
+from curvFormer_model import create_layernode_curvatureformer
 
 try:
     from oct_loader import RetinaDataset
