@@ -1,0 +1,19 @@
+# config.yml
+training:
+  seed: 42
+  n_splits: 3
+  weight_decay: 0.01
+  num_classes: 12
+  is_finetuning: True
+   # NEW: select model
+  model_name: "my_model"   
+  model_size: "S"  
+  lr: 0.0001
+  batch_size: 1 #8
+  epochs: 100
+  exp_name: "CurvFormer"
+
+data:
+  dataset_path: "data/oct.p"
+
+
