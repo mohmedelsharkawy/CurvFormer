@@ -2,19 +2,19 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
-[![Conference](https://img.shields.io/badge/MICCAI-2026-blue)](https://miccai.org/)
-
-
+[![Conference: MICCAI](https://img.shields.io/badge/MICCAI-2026-blue)](https://miccai.org/)
 
 ## 📌 Abstract
-[cite_start]This repository contains the official PyTorch implementation of **CurvFormer**, a boundary-guided geometric transformer for volumetric OCT segmentation[cite: 33]. [cite_start]Unlike standard transformers, CurvFormer injects explicit **differential geometric priors** (via a differentiable Structure Tensor) into an **Axial Attention** bottleneck[cite: 34]. [cite_start]This ensures topological continuity and precise boundary delineation, even in sparse clinical protocols ($D=11$ slices)[cite: 26, 32].
+This repository contains the official PyTorch implementation of **CurvFormer**, a geometry-aware volumetric network designed for fine-grained OCT analysis.
+
+Retinal layer segmentation in sparse clinical protocols is often compromised by pathological deformations and limited depth resolution. **CurvFormer** addresses this by injecting explicit **differential geometric priors**—specifically a differentiable Structure Tensor—into an **Axial Attention** bottleneck. This mechanism allows the model to learn topological continuity and anisotropy, ensuring robust separation of **11 distinct retinal layers**, even in the presence of fluid or drusen.
 
 ## 🌟 Key Features
-* [cite_start]**Geometry-Aware Attention:** Injects curvature and anisotropy priors directly into the transformer bottleneck[cite: 34].
-* [cite_start]**Structure Tensor Module:** Computes differentiable edge strength ($e$) and coherence ($c$) to guide learning[cite: 54].
-* [cite_start]**Fine-Grained Segmentation:** Designed for dense **11-layer** retinal phenotyping (vs. standard 7-9 layers)[cite: 27].
-* [cite_start]**Boundary-Guided Decoding:** Explicit boundary heads reduce leakage between thin layers[cite: 34].
-* [cite_start]**OCT-Specific Design:** Anisotropic encoder-decoder preserves depth resolution for short stacks[cite: 96].
+
+* **Differentiable Structure Tensor:** Computes explicit curvature ($e$) and coherence ($c$) cues to guide the attention mechanism.
+* **Geometric Axial Attention:** A transformer bottleneck that utilizes learned geometric biases to preserve global topology.
+* **Boundary-Guided Decoding:** A dual-stream decoder that enforces crisp transitions between thin retinal layers.
+* **Anisotropic Design:** optimized for clinical OCT stacks ($D=11$) to prevent depth information loss.
 
 ## 🚀 Usage
 
